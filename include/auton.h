@@ -1,4 +1,5 @@
-
+#include "vex.h"
+#include "robot-config.h"
 
 
 int wheelCircum = 10;
