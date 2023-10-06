@@ -1,11 +1,5 @@
-/*----------------------------------------------------------------------------*/
-/*                                                                            */
-/*    Module:       main.cpp                                                  */
-/*    Author:       VEX                                                       */
-/*    Created:      Thu Sep 26 2019                                           */
-/*    Description:  Competition Template                                      */
-/*                                                                            */
-/*----------------------------------------------------------------------------*/
+// Code written for Team 36830B TriFighters
+// Written by team coder: Nicholas Glennon
 
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
@@ -23,7 +17,6 @@
 
 #include "vex.h"
 
-
 using namespace vex;
 competition Competition;
 bool turnMotor = false;
@@ -31,7 +24,7 @@ bool doPiston = false;
 bool resetAllowedY = false;
 bool resetAllowedX = false;
 
-
+// Starts Motors Moving
 void startMotors()
 {
   FL.spin(forward);
@@ -43,6 +36,8 @@ void startMotors()
   intake.spin(forward);
   endgame.spin(forward);
 }
+
+// Controls the Driving of the robot using the Left and Right Joysticks
 void drives()
 {
   FL.setVelocity(Controller1.Axis3.position() * 2 +
@@ -58,28 +53,42 @@ void drives()
                      Controller1.Axis1.position() * 2,
                  percent);
 }
-void intakeSpin() {
-  if (Controller1.ButtonL1.pressing())  {
+
+// Controls the spinning of the intake with the L1 and L2 buttons
+void intakeSpin()
+{
+  if (Controller1.ButtonL1.pressing())
+  {
     intake.setVelocity(100, percent);
   }
-  else if (Controller1.ButtonL2.pressing())  {
+  else if (Controller1.ButtonL2.pressing())
+  {
     intake.setVelocity(-100, percent);
   }
-  else {
+  else
+  {
     intake.setVelocity(0, percent);
   }
 }
-void endgameSpin()  {
-  if (Controller1.ButtonLeft.pressing())  {
+
+// Controls the activation of the endgame bar with the left and right arrow buttons
+void endgameSpin()
+{
+  if (Controller1.ButtonLeft.pressing())
+  {
     endgame.setVelocity(100, percent);
   }
-  else if (Controller1.ButtonRight.pressing())  {
+  else if (Controller1.ButtonRight.pressing())
+  {
     endgame.setVelocity(-100, percent);
   }
-  else {
+  else
+  {
     endgame.setVelocity(0, percent);
   }
 }
+
+// Controls the toggling of the catapult motor with the Y button
 int buttonYToggle()
 {
   while (1)
@@ -100,6 +109,7 @@ int buttonYToggle()
   return 1;
 }
 
+// Controls the toggling of the wings with the X button
 int buttonXToggle()
 {
   while (1)
