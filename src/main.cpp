@@ -16,6 +16,7 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
+#include "auton.h"
 
 using namespace vex;
 competition Competition;
@@ -139,7 +140,9 @@ void pre_auton(void)
   startMotors();
 }
 
-void autonomous(void) {}
+void autonomous(void) {
+  leftAuton();
+}
 
 void usercontrol(void)
 {
