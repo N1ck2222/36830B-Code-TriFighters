@@ -103,10 +103,8 @@ void driveModes(brakeType type){
 }
 
 
-
-
 void rightAuton(){
-  driveBackwardFor(3);
+  driveBackwardFor(2.85);
   turnRightFor(0.7);
   intake.setVelocity(-100, percent);
   wait(2, seconds);
@@ -116,7 +114,23 @@ void rightAuton(){
 
 }
 
+void leftScoreAuton(){
+  driveBackwardFor(2.85);
+  turnLeftFor(0.7);
+  intake.setVelocity(-100, percent);
+  wait(2, seconds);
+  intake.setVelocity(0, percent);
+  driveBackwardFor(1);
+  driveForwardFor(1);
+}
+
 void leftAuton(){
   CatL.setVelocity(25, percent);
   CatR.setVelocity(25, percent);
+  
+}
+
+void skillsAuton(){
+  CatL.setVelocity(50, percent);
+  CatR.setVelocity(50, percent);
 }

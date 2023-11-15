@@ -41,16 +41,16 @@ void startMotors()
 // Controls the Driving of the robot using the Left and Right Joysticks
 void drives()
 {
-  FL.setVelocity(Controller1.Axis3.position() * 2 +
+  FL.setVelocity(Controller1.Axis3.position() * -2 +
                      Controller1.Axis1.position() * 2,
                  percent);
-  FR.setVelocity(Controller1.Axis3.position() * 2 -
+  FR.setVelocity(Controller1.Axis3.position() * -2 -
                      Controller1.Axis1.position() * 2,
                  percent);
-  BL.setVelocity(Controller1.Axis3.position() * 2 +
+  BL.setVelocity(Controller1.Axis3.position() * -2 +
                      Controller1.Axis1.position() * 2,
                  percent);
-  BR.setVelocity(Controller1.Axis3.position() * 2 -
+  BR.setVelocity(Controller1.Axis3.position() * -2 -
                      Controller1.Axis1.position() * 2,
                  percent);
 }
@@ -141,8 +141,9 @@ void pre_auton(void)
 }
 
 void autonomous(void) {
-  leftAuton();
+
 }
+
 
 void usercontrol(void)
 {
